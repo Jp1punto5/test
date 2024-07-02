@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="IMG/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script> <!--ESTA PARTE ES IMPORTANTE-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_home.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_menu.css'%}">
+    <title>Inicio</title>
+    
+</head>
+<body>
+    <div id="contenedor-completo">
+
+
+            <!--AQUI SE ARMA TODAS LAS OPCIONES DE LA PAGINA ARRIBA-->
+            <div class="row" id="fila-nav">
+
+                <div class="col-10" id="fila-col">
+                    
+                    <div  class="button__reporte" ><button id="btn__reporte_ins">{{ usuario2 }}tabla temporal Patente/IDgps </button></div>
+                    <div  class="button__reporte" ><button id="btn__crear_tabla">tabla temporal Patente/SImcard</button></div>
+                    <div  class="button__reporte" ><button id="btn__validar_datos">Crear Tabla de Alertas de Correos</button></div>
+                    <div  class="button__reporte" ><button id="btn__recorrer_vin">Crear Tabla de Correos Flota ICB</button></div>
+                    
+
+                </div>
+                <div class="col-1" id="volverHome" > 
+                    <a id="aa" href="{% url 'index'%}" style="float: right;">
+                        <h3 style="float: left; margin-right: 2px; margin-left: 1px;">Cerrar Sesión</h3>
+                        <img src="https://png.pngtree.com/png-clipart/20230820/original/pngtree-californian-condor-baseball-mascot-picture-image_8108602.png" width="40px" height="30px"  alt="">
+                        
+                    </a>
+                </div>
+
+            </div> <!--AQUI TERMINA LO QUE SE ENCUENTRA ARRIBA-->
+            <!-- aqui va el mensaje de bienvenida-->
+            {%if msg != ''%}
+            <div id="mostrar_ingreso" style="visibility: visible; display: block;" class="logeo">
+                <p><h1>{{ msg }}</h1></p>
+                <button id="btn__login"  style="visibility: visible; display: block;">cerrar</button>
+            </div>
+            {% endif %}
+            <!-- fin del mensaje-->
+            <!-- aqui va todo lo que se encuentra abajo de las opciones de arriba-->
+            <div class="container-xxl">
+              <div>
+
+                <main id="ocultar__todo"><!--aqui vamos a manipular lo que vendria siendo la ventana que nos permitira solicitar lo que se quiere hacer-->
+                    <div class="caja__trasera">
+                        <!--INICIO DE PROCESO DE ARCHIVO-->
+                        <div class="caja__trasera-subir-archivo">
+                                <h3 id="h3__cambiar" ></h3>
+                                <input type="file" id="primer__ar" accept=".xlsx,.xls">
+                                    <button id="btn__subir-archivo" >Subir archivo</button>
+                                <p id="p__completar"></p>
+                                <button id="cambiar__btn">Generar</button>
+                        </div> <!-- FIN DEL PROCESO-->
+                    </div> <!-- FIN CAJA TRASERA -->
+                </main><!-- fin de dicha manipulacion en el main-->
+              </div>
+            
+            </div>
+            <!--fin del cuerpo de abajo-->
+
+
+
+    </div> <!-- FIN CONTENEDOR DE TODO-->
+    <!--AQUI COMIENZA EL SCRIPT-->
+    <script  src="{% static 'js/manipularExcel.js'%}" ></script>
+    <script src="{% static 'js/mostrarOculto.js'%}"></script>
+    <!-- FIN DEL SCRIPT-->
+</body>
+  <!-- ALGUNAS LLAVES DE COMENTARIO PARA COPIAR Y PEGAR AQUI ABAJO-->
+    <!---->
+    <!---->
+    <!---->
+</html>

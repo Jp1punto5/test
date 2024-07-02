@@ -1,0 +1,167 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; /*Esta propiedad CSS se utiliza para quitar cualquier decoración de texto predeterminada, como subrayado, tachado o resaltado.*/
+    font-family: sans-serif;
+  }
+    
+  #contenedor-body {
+      width: 100%;
+      height: auto;
+      margin: auto;
+      position: relative;
+    }
+    #caja-iz {
+      background-color: #00008B;
+      justify-content: center;
+      width: 100%;
+      max-width: 500px;
+    }
+  
+    #logo
+    {
+      max-width: 300px; /* La imagen no será más grande que el contenedor */
+      max-height: 200px; /* La imagen no será más alta que el contenedor */
+      width: 100%; /* La imagen mantendrá su relación de aspecto */
+      height: 100%; /* La imagen mantendrá su relación de aspecto */
+      position: absolute; /* Posicionamos absolutamente la imagen dentro del contenedor */
+      top: 50%; /* La mitad del alto del contenedor */
+      left: 50%; /* La mitad del ancho del contenedor */
+      transform: translate(-50%, -50%); /* Centramos la imagen */
+     
+    }
+  
+    #ppp
+    {
+     /* border: 1px solid black; */ 
+      width: 90%;
+      margin-left: 5%;
+      height: 300px; 
+    }
+  
+    #cont-form
+    {
+      /* border: 1px solid black; */
+      margin: 0px;
+      padding: 0px;
+      width: 100%;
+      height: 150px;
+    }
+  
+    #formulario1
+    {
+      /* border: 1px solid black; */
+       margin-top: 2%;
+       height: 120px;
+      
+    }
+  
+  
+    .pro
+    {
+      border: black;
+      margin-top: 9px;
+      width: 70%;
+      font-size: 25px;
+      outline: none;
+    }
+  
+    .pro:hover
+    {
+      padding:4px;
+      border: 2px solid yellow;
+    }
+  
+    #boton_enviar{
+      transition: all 400ms;
+      padding: 13px 20px;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    #boton_enviar:hover{
+      font-weight: 400;
+      font-size: 20px;
+      background: #7FFF00;
+      color: black;
+      padding: 20px 30px;
+    }
+  
+    .imagen{
+      margin-top:35px;
+      background-image: url(https://png.pngtree.com/png-clipart/20230820/original/pngtree-californian-condor-baseball-mascot-picture-image_8108602.png);
+      width: 100%;
+      height: 450px;
+      background-size: cover; /*de esta manera el tamanio de la imagen se adapta*/
+      background-repeat: no-repeat; /* esto es para que la imagen no se repita */
+      background-position: center; /* con esto centramos la imagen*/
+      display: flex;
+    }
+  
+    /*AQUI MANIPULO LA IMAGEN DE LA CAJA DERECHA y la MISMA CAJA DE LA DERECHA*/
+  
+    #caja-der {
+      width: 100%;    
+      background-image: url(https://static.vecteezy.com/system/resources/previews/031/696/602/non_2x/a-row-of-parked-trucks-silhouetted-against-the-backdrop-of-a-radiant-sunrise-ai-generated-photo.jpg);
+      background-size: cover; /*de esta manera el tamanio de la imagen se adapta*/
+      background-repeat: no-repeat; /* esto es para que la imagen no se repita */
+      background-position: center; /* con esto centramos la imagen*/
+     /* background-attachment: fixed;*/ /* con esto hacemos que tome tanto el ancho como el largo de la pantalla*/   
+    }
+  
+    /*AQUI TERMINA DICHA MANIPULACIÓN*/
+  
+  @media screen and (max-width: 1400px){
+    .imagen{
+      height: 270px;
+    }
+  }
+  
+
+
+  #mostrar_error{
+    visibility: hidden;
+    display: none;
+ 
+  }
+  #mostrar_ingreso{
+   visibility: hidden;
+    display: none;
+  }
+
+#btn__login{
+
+  visibility: hidden;
+  display: none;
+}
+
+  .logeo{
+    float: right;
+    margin-top: 20%;
+    margin-right: 36%;
+    width: 500px;
+    height: 220px;
+    border: 1px solid black;
+    border-radius: 12px;
+    background: rgb(117, 224, 151);
+    padding: 20px 60px;
+  }
+  
+  .logeo button{
+    padding: 15px 15px;
+    outline: none;
+    border-radius: 12px;
+    background:#6f6fe1;
+    margin-left: 20%;
+  }
+  
+
+
+
+  /*esto es algo que hice de prueba para el HTML mostrar.html*/
+  #h1_ocu{
+
+    visibility: hidden;
+  }

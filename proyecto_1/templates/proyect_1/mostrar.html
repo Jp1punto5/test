@@ -1,0 +1,13 @@
+
+    {% extends "./index.html" %}
+
+    {%block body%}
+        <div>
+            {%  if error_messagge != '' %}
+                <h1 id="h1_ocu" style="visibility: visible; color: red; font-size: 20px;"> {{ error_message }}</h1>
+            {% endif%}
+        </div>
+          <li>usuario: {{usuario2}}</li>
+          <li>clave: {{password2}}</li>
+    </ul>
+    {% endblock %}

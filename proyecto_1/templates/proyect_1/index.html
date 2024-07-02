@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <link rel="icon" href="IMG/icon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script> <!--ESTA PARTE ES IMPORTANTE-->
+    <script src="https://sbt.0soft.dev/sheet-best-templates.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='{% static "css/estilo_home.css" %}''>
+
+    <title>Generador query</title>
+</head>
+<body>
+    {% block body%} <!-- esto me sirve para usar la herencia y no repetir HTML en otras paginas / ver ejemplo en mostrar.html-->
+    {%endblock%}
+    <!-- como dato este bootstrap forma columnas o bloques enteros, hay que darles un largo para que reconosca
+    el espacio que va autilizar.
+ejemplo: la clase " col"-->
+    <div class="container-fluid" id="contenedor-body">
+        <div class="row"> <!--fila principal-->
+            <!-- Caja izquierda que toma la mitad del ancho en pantallas pequeñas y un tercio en medianas y grandes -->
+            <div class="col" style="background-color: #095652;" id="caja-iz">               
+                    <div class="row col-12"> <!--fila 1 -->
+                      <!-- aqui estamos usando un mini logo con enlace directo al mismo home xd-->
+                        <nav class="navbar bg-body-tertiary">
+                                <div class="container-fluid">
+                                <a class="navbar-brand" style="color:#F5F5F5;"  href="index">
+                                    <img src="https://static.vecteezy.com/system/resources/previews/024/787/254/original/hand-drawn-vintage-food-truck-logo-in-flat-line-art-style-png.png" alt="Logo" width="40" height="30"  class="d-inline-block align-text-top">
+                                    TuQueryATuMano.COM 
+                                </a>
+                                </div>
+                          </nav>
+                        <div class="col-12" id="ppp" style="height: 150px;">
+                            <img id="logo" style="border-radius: 30px;" src="https://static.vecteezy.com/system/resources/previews/024/787/254/original/hand-drawn-vintage-food-truck-logo-in-flat-line-art-style-png.png" alt="">
+                        </div>                       
+                        <div class="col-12">
+                            <div style="margin: 0; padding: 0; height: 50px;">
+                                <h2 style=" margin-left: 10%;  margin-top: 20px;
+                                 color: #F5F5F5;">Ingrese sus datos</h2>
+                            </div>
+                        </div>
+                    </div> <!--fin fila 1-->              
+                    <div class="row" > <!--fila 2-->
+                        <div id="cont-form">                   
+                            <form  id="formulario1" action="{% url 'menu2'%}" method="POST">{% csrf_token %}
+                                <input type="text" class="pro" id="user" name="txtUser"  placeholder="Usuario"
+                                style="border-radius: 14px;  margin-left: 15%; padding-left: 5%;" 
+                                ><!--fin input usuario-->
+                                <input type="password" class="pro" id="pass" name="txtPass" placeholder="Contraseña" 
+                                style="border-radius: 14px;  margin-left: 15%;padding-left: 5%;" 
+                                ><!--fin input clave-->
+                                <input type="submit"  id="boton_enviar" class="btn btn-success btn-block" 
+                                style="width: 60%; border-radius: 16px; margin-left: 20%; margin-top: 10px;"
+                                value="INGRESAR">
+                            </form>                       
+                        </div>
+                    </div><!--fin fila 2-->
+                    <div class="col" > <!--fila 3-->
+                            <div class="imagen"></div>     <!--aqui tengo la imagen abajo del formulario-->                                       
+                    </div><!--fin fila 3-->            
+            </div>
+            <!-- Caja derecha que toma la mitad del ancho en pantallas pequeñas y dos tercios en medianas y grandes -->
+            <div class="col-9" style="background-color: lightcoral;" id="caja-der">
+                {% if error_message != ''%}
+                <div id="mostrar_error" style="visibility: visible; display: block;" class="logeo">   
+                  <p style="color:red;">{{ error_message }}</p> 
+                  <button id="btn__login" style="visibility: visible; display: block;">cerrar</button>
+                </div>
+                {% endif %}
+            </div>          
+        </div><!-- fin fila principal-->
+    </div> <!--fin del contenedor -->
+    <script src="{% static 'js/mostrarOculto.js'%}"></script> <!-- AQUI SE EJECUTAN TODAS LAS FUNCIONES QUE TENGO EN MI JAVASCRIPT-->
+  
+      <!-- ALGUNAS LLAVES DE COMENTARIO PARA COPIAR Y PEGAR AQUI ABAJO-->
+    <!---->
+    <!---->
+    <!---->
+</body>
+</html>
