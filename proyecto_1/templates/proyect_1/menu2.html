@@ -39,9 +39,19 @@
             </div> <!--AQUI TERMINA LO QUE SE ENCUENTRA ARRIBA-->
             <!-- aqui va el mensaje de bienvenida-->
             {%if msg != ''%}
-            <div id="mostrar_ingreso" style="visibility: visible; display: block;" class="logeo">
+            <style>
+                #mostrar_ingreso {
+
+                    {{style_1}}
+                }
+
+                #btn__login {
+                    {{style_1}}
+                }
+            </style>
+            <div id="mostrar_ingreso" class="logeo">
                 <p><h1>{{ msg }}</h1></p>
-                <button id="btn__login"  style="visibility: visible; display: block;">cerrar</button>
+                <button id="btn__login2">cerrar</button>
             </div>
             {% endif %}
             <!-- fin del mensaje-->

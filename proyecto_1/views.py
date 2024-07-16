@@ -17,18 +17,22 @@ def menu2(request):
         password2 = request.POST.get("txtPass", "").strip()
         if usuario2 == '' or password2 == '':
             error = 'no se aceptan campos vacios'
-            return render( request,'proyect_1/index.html',{'error_message':error})
+            vis = "visibility: visible; display: block;"
+            return render( request,'proyect_1/index.html',{'error_message':error,'style_1':vis})
         else:
            try:              
                 usuario = Usuarios.objects.get(usu_user= usuario2, usu_clave = password2)
                 msg = 'Bienvenido ' + usuario.usu_user
-                return render(request,'proyect_1/menu2.html',{'msg':msg})
+                vis = "visibility: visible; display: block;"
+                return render(request,'proyect_1/menu2.html',{'msg':msg,'style_1':vis})
            except Usuarios.DoesNotExist:
                msg = 'Las Credenciales de Acceso ingresadas no coinciden, vuelva a intentarlo'
-               return render( request,'proyect_1/index.html',{'error_message':msg})
+               vis = "visibility: visible; display: block;"
+               return render( request,'proyect_1/index.html',{'error_message':msg,'style_1':vis})
     else:
         error = 'No puede ingresar sin credenciales de Acceso'
-        return render(request,'proyect_1/index.html',{'error_message':error})
+        vis = "visibility: visible; display: block;"
+        return render(request,'proyect_1/index.html',{'error_message':error, 'style_1':vis})
 
 
 

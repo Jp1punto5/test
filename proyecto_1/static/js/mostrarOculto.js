@@ -9,16 +9,23 @@ const btn_validar_tabla = document.getElementById('btn__validar_datos');
 const btn_recorrer_vin = document.getElementById('btn__recorrer_vin');
 
 const btn_cerrar = document.getElementById("btn__login");
-
+const btn_cerrar2 = document.getElementById("btn__login2");
+const mostrarError = document.getElementById("mostrar_error");
+const mostrarExito = document.getElementById("mostrar_ingreso");
 
 btn_cerrar.addEventListener('click', () => {
 
-    let mostrarError = document.getElementById("mostrar_error");
-    let mostrarExito = document.getElementById("mostrar_ingreso");
+
     mostrarError.style.visibility = 'hidden';
     mostrarError.style.display = 'none';
+    btn_cerrar.onclick = null;
+});
+
+btn_cerrar2.addEventListener('click', () => {
+
     mostrarExito.style.visibility = 'hidden';
-    mostrarExito.style.display = 'none';
+    mostrarExito.style.display = 'none'; 
+    btn_cerrar.onclick = null;
 });
 
 

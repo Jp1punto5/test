@@ -64,16 +64,26 @@ ejemplo: la clase " col"-->
             <!-- Caja derecha que toma la mitad del ancho en pantallas pequeñas y dos tercios en medianas y grandes -->
             <div class="col-9" style="background-color: lightcoral;" id="caja-der">
                 {% if error_message != ''%}
-                <div id="mostrar_error" style="visibility: visible; display: block;" class="logeo">   
+                <style>
+                    #mostrar_error {
+
+                        {{style_1}}
+                    }
+
+                    #btn__login {
+                        {{style_1}}
+                    }
+                </style>
+                <div id="mostrar_error"  class="logeo">   
                   <p style="color:red;">{{ error_message }}</p> 
-                  <button id="btn__login" style="visibility: visible; display: block;">cerrar</button>
+                  <button id="btn__login">cerrar</button>
                 </div>
                 {% endif %}
             </div>          
         </div><!-- fin fila principal-->
     </div> <!--fin del contenedor -->
     <script src="{% static 'js/mostrarOculto.js'%}"></script> <!-- AQUI SE EJECUTAN TODAS LAS FUNCIONES QUE TENGO EN MI JAVASCRIPT-->
-  
+                 
       <!-- ALGUNAS LLAVES DE COMENTARIO PARA COPIAR Y PEGAR AQUI ABAJO-->
     <!---->
     <!---->
