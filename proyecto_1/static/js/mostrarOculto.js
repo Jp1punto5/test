@@ -9,24 +9,30 @@ const btn_validar_tabla = document.getElementById('btn__validar_datos');
 const btn_recorrer_vin = document.getElementById('btn__recorrer_vin');
 
 const btn_cerrar = document.getElementById("btn__login");
-const btn_cerrar2 = document.getElementById("btn__login2");
 const mostrarError = document.getElementById("mostrar_error");
 const mostrarExito = document.getElementById("mostrar_ingreso");
+const error = document.getElementById("parrafo"); 
+const exito = document.getElementById("h1_");
+
+
 
 btn_cerrar.addEventListener('click', () => {
 
-
-    mostrarError.style.visibility = 'hidden';
-    mostrarError.style.display = 'none';
-    btn_cerrar.onclick = null;
+    if (error !== null)
+        {
+            mostrarError.style.visibility = "hidden";
+            mostrarError.style.display = "none";
+            btn_cerrar.onclick = null;
+        }
+    
+        if(exito !== null)
+        {
+            mostrarExito.style.visibility = "hidden";
+            mostrarExito.style.display = "none";
+            btn_cerrar.onclick = null;
+        }
 });
 
-btn_cerrar2.addEventListener('click', () => {
-
-    mostrarExito.style.visibility = 'hidden';
-    mostrarExito.style.display = 'none'; 
-    btn_cerrar.onclick = null;
-});
 
 
 let formulario_visible = false;

@@ -4,7 +4,7 @@
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="IMG/icon.png" type="image/x-icon">
+    <link rel="icon" href="{% static 'imagenes/icon.png' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script> <!--ESTA PARTE ES IMPORTANTE-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_home.css'%}">
@@ -21,7 +21,7 @@
 
                 <div class="col-10" id="fila-col">
                     
-                    <div  class="button__reporte" ><button id="btn__reporte_ins">{{ usuario2 }}tabla temporal Patente/IDgps </button></div>
+                    <div  class="button__reporte" ><button id="btn__reporte_ins">tabla temporal Patente/IDgps </button></div>
                     <div  class="button__reporte" ><button id="btn__crear_tabla">tabla temporal Patente/SImcard</button></div>
                     <div  class="button__reporte" ><button id="btn__validar_datos">Crear Tabla de Alertas de Correos</button></div>
                     <div  class="button__reporte" ><button id="btn__recorrer_vin">Crear Tabla de Correos Flota ICB</button></div>
@@ -50,8 +50,8 @@
                 }
             </style>
             <div id="mostrar_ingreso" class="logeo">
-                <p><h1>{{ msg }}</h1></p>
-                <button id="btn__login2">cerrar</button>
+                <p><h1 id="h1_">{{ msg }}</h1></p>
+                <button id="btn__login">cerrar</button>
             </div>
             {% endif %}
             <!-- fin del mensaje-->
@@ -80,8 +80,9 @@
 
     </div> <!-- FIN CONTENEDOR DE TODO-->
     <!--AQUI COMIENZA EL SCRIPT-->
-    <script  src="{% static 'js/manipularExcel.js'%}" ></script>
     <script src="{% static 'js/mostrarOculto.js'%}"></script>
+    <script  src="{% static 'js/manipularExcel.js'%}" ></script>
+    
     <!-- FIN DEL SCRIPT-->
 </body>
   <!-- ALGUNAS LLAVES DE COMENTARIO PARA COPIAR Y PEGAR AQUI ABAJO-->

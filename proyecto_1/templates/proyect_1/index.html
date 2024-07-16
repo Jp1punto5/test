@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   {% load static %}
-    <link rel="icon" href="IMG/icon.png" type="image/x-icon">
+    <link rel="icon" href="{% static 'imagenes/icon.png' %}" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -75,7 +75,7 @@ ejemplo: la clase " col"-->
                     }
                 </style>
                 <div id="mostrar_error"  class="logeo">   
-                  <p style="color:red;">{{ error_message }}</p> 
+                  <p id="parrafo" style="color:red;">{{ error_message }}</p> 
                   <button id="btn__login">cerrar</button>
                 </div>
                 {% endif %}
