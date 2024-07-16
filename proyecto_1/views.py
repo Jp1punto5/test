@@ -15,10 +15,18 @@ def menu2(request):
     if request.method == "POST":
         usuario2 = request.POST.get("txtUser", "").strip()
         password2 = request.POST.get("txtPass", "").strip()
-        if usuario2 == '' or password2 == '':
+        if usuario2 == '' and password2 == '':
             error = 'no se aceptan campos vacios'
             vis = "visibility: visible; display: block;"
             return render( request,'proyect_1/index.html',{'error_message':error,'style_1':vis})
+        elif usuario2 == '':
+            error = 'Se debe ingresar el nombre de un usuario'
+            vis = "visibility: visible; display: block;"
+            return render(request,'proyect_1/index.html',{'error_message':error,'style_1':vis})
+        elif password2 == '':
+            error = 'Ingrese su clave para acceder'
+            vis = "visibility: visible; display: block;"
+            return render(request,'proyect_1/index.html' , {'error_message':error,'style_1':vis})
         else:
            try:              
                 usuario = Usuarios.objects.get(usu_user= usuario2, usu_clave = password2)

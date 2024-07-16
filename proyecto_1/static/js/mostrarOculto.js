@@ -14,6 +14,7 @@ const mostrarExito = document.getElementById("mostrar_ingreso");
 const error = document.getElementById("parrafo"); 
 const exito = document.getElementById("h1_");
 
+let eee = 0;
 
 
 btn_cerrar.addEventListener('click', () => {
@@ -30,6 +31,7 @@ btn_cerrar.addEventListener('click', () => {
             mostrarExito.style.visibility = "hidden";
             mostrarExito.style.display = "none";
             btn_cerrar.onclick = null;
+            eee = 1;
         }
 });
 
@@ -60,35 +62,67 @@ function actualizarFormulario(estado, titulo, cuerpo)
         return !estado;
 }
 
+
+
 //boton 1
 btn_reporte.addEventListener('click', () => 
     {
-        btn_generar.onclick = null;
-       estadosVisibilidad.reporte = actualizarFormulario(estadosVisibilidad.reporte,btn_reporte.textContent,'Se tomara el archivo seleccionado y se creara un insertar para SQL');
-       btn_generar.onclick = procesarPrimerExcel;
+        if (eee < 1)
+            {
+                alert("cierre la ventana de bienvenida antes de realizar otra accion....")
+            }
+        else
+        {
+            btn_generar.onclick = null;
+            estadosVisibilidad.reporte = actualizarFormulario(estadosVisibilidad.reporte,btn_reporte.textContent,'Se tomara el archivo seleccionado y se creara un insertar para SQL');
+            btn_generar.onclick = procesarPrimerExcel;
+        }
     }); // fin del primer boton de reporte
 
 //boton 2
 btn_crear_tabla.addEventListener('click', () => 
     {
-        btn_generar.onclick = null;
-        estadosVisibilidad.crearTabla = actualizarFormulario(estadosVisibilidad.crearTabla,btn_crear_tabla.textContent,'Vamos a Crear Tabla desde 0 formato SQL');
-        btn_generar.onclick = procesarSegundoExcel;
+        if (eee < 1)
+            {
+                alert("cierre la ventana de bienvenida antes de realizar otra accion....")
+            }
+        else
+        {
+            btn_generar.onclick = null;
+            estadosVisibilidad.crearTabla = actualizarFormulario(estadosVisibilidad.crearTabla,btn_crear_tabla.textContent,'Vamos a Crear Tabla desde 0 formato SQL');
+            btn_generar.onclick = procesarSegundoExcel;
+        }
+
     }) // fin del segundo boton
 
 //boton 3
 
 btn_validar_tabla.addEventListener('click', () => 
     {
-        btn_generar.onclick = null;
-        estadosVisibilidad.validarTabla = actualizarFormulario(estadosVisibilidad.validarTabla,btn_validar_tabla.textContent,'aqui se genera un archivo donde podremos validar datos');
-        btn_generar.onclick = procesarTercerExcel;
+        if (eee < 1)
+            {
+                alert("cierre la ventana de bienvenida antes de realizar otra accion....")
+            }
+            else
+            {
+                btn_generar.onclick = null;
+                estadosVisibilidad.validarTabla = actualizarFormulario(estadosVisibilidad.validarTabla,btn_validar_tabla.textContent,'aqui se genera un archivo donde podremos validar datos');
+                btn_generar.onclick = procesarTercerExcel;
+            }
     })// fin del tercer boton
 //boton 4
 
 btn_recorrer_vin.addEventListener('click', () => 
     {
-        btn_generar.onclick = null;
-        estadosVisibilidad.recorrerVin = actualizarFormulario(estadosVisibilidad.recorrerVin,btn_recorrer_vin.textContent,'Ingresar Archivo Excel con el que vamos a validar en base de datos');
-        btn_generar.onclick = procesarCuartoExcel;
+        if (eee < 1)
+            {
+                alert("cierre la ventana de bienvenida antes de realizar otra accion....")
+            }
+            else
+            {
+                btn_generar.onclick = null;
+                estadosVisibilidad.recorrerVin = actualizarFormulario(estadosVisibilidad.recorrerVin,btn_recorrer_vin.textContent,'Ingresar Archivo Excel con el que vamos a validar en base de datos');
+                btn_generar.onclick = procesarCuartoExcel;
+            }
+
     }) // fin del cuarto boton

@@ -141,22 +141,51 @@
     float: right;
     margin-top: 20%;
     margin-right: 36%;
-    width: 500px;
-    height: 220px;
-    border: 1px solid black;
+    width: auto;
+    height: auto;
     border-radius: 12px;
-    background: rgb(117, 224, 151);
-    padding: 20px 60px;
+    background:transparent;
+    backdrop-filter: blur(10px);
+
   }
   
   .logeo button{
+    float: left;
+    transition: all 400ms;
     padding: 15px 15px;
     outline: none;
+    border: none;
     border-radius: 12px;
+    font-size: 26px;
     background:#6f6fe1;
-    margin-left: 20%;
+    margin-left: 30%;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .logeo button:hover{
+    padding: 17px 19px;
+    font-size: 30px;
+    background:#0909ec;
+    color: white;
+    
   }
   
+  .h1_{
+    width: 350px;
+    height: auto;
+    padding: 4px 4px;
+    border: none;
+    border-radius: 10px;
+    background: #3a3a3c;
+    backdrop-filter: blur(20px);
+    font-size: 25px;
+    color: rgba(241, 248, 247, 0.953);
+    float: left;
+    margin-left: 5%;
+    margin-top: 15px;
+  }
+
 
 
 
